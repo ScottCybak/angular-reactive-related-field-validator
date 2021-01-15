@@ -141,9 +141,7 @@ and bind it to our *controls*
 form = new FormGroup({
   startDate: new FormControl(null, [myRelatedValidator]),
   endDate: new FormControl(null, [myRelatedValidator])
-}, {
-  validators: [formValidatorFn]
-})
+}) // note - no form level validator needed
 ```
 
 Now, regardless of how you have the values set, validation is rechecked on any "attached" control (`... controlNames[]`), and the UI updates accordingly
